@@ -8,10 +8,18 @@ public class ShipController : MonoBehaviour
     public float currentSpeed = 0f;
 
     private Rigidbody2D rb;
+    public GameObject dialogueBubble;
+    private bool show = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ToggleDialogueBubble(show);
+    }
+
+    public void ToggleDialogueBubble(bool show)
+    {
+        dialogueBubble.SetActive(show);
     }
 
     void FixedUpdate()
